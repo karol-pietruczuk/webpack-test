@@ -1,0 +1,35 @@
+.self-introduction{
+    padding: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    max-width: 1000px;
+    grid-area: self-introduction;
+    &__title{
+        color: rgb(91, 144, 170);
+        &::before{
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: tomatO;
+            border-radius: 50%;
+            content:"";
+            margin-right: 10px;
+        }
+      }
+      &__description{
+        color: rgb(130, 138, 135);
+        display: inline-block;
+        max-width: 1000px;
+        text-align: justify;
+      }
+      &__description--image{
+        display: inline-block;
+        margin-right: 8px;
+        float: left;
+      }
+      &__description--link{
+        color: #000;
+      }
+  }

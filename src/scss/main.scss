@@ -1,13 +1,261 @@
-@import "~normalize.css";
+@import "modules/self-introduction.scss";
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css";
 
-@import "_variables";
-@import "modules/hello.scss";
+$desktop: 768px;
 
-body {
-  background: $wtf;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
+html{
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after{
+    box-sizing: inherit;
+  }
+  
+  .body{
+    margin: 0;
+    
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+  
+  }
+  
+  .header{
+    background-color: #A9C9FF;
+    background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+    padding: 16px;
+    border-radius: 8px;
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .navigation{
+    padding: 16px;
+    display: none;
+    &--open{
+        display: block;
+      }
+      &__link{
+        color: #003049;
+        display: block;
+        margin: 0 0 16px;
+        @media (min-width: $desktop){
+            display: inline-block;
+            margin-right: 80px;
+        }        
+      }
+      &__link--homepage{
+        color: #000;
+      }
+      @media (min-width: $desktop){
+        display: flex;
+        justify-content: center;
+      }
+  }
+
+  .menu--button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #A9C9FF;
+    background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    outline: hidden;
+    @media (min-width: $desktop){
+        display: none;
+    }
+  }
+
+  .main{
+    text-align: center;
+    margin: 60px auto 0;
+    display: grid;
+    grid-template-areas: "main-header main-header main-header main-header"
+    "self-introduction self-introduction self-introduction self-introduction"
+    "studies studies work work"
+    "courses courses hobby hobby"
+    ". plans plans .";
+    column-gap: 16px;
+    &-header{
+        color: #003049;
+        padding: 16px;
+        border-radius: 8px;
+        grid-area: main-header;
+      }
+      @media (min-width: $desktop){
+        margin: 98px auto 0;
+      }
+  }
+ 
+  .studies{
+    padding: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    max-width: 1000px;
+    grid-area: studies;
+    &__title{
+        color: rgb(91, 144, 170);
+        &::before{
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: tomatO;
+            border-radius: 50%;
+            content:"";
+            margin-right: 10px;
+        }
+      }
+      &__description{
+        color: rgb(130, 138, 135);
+        max-width: 1000px;
+        text-align: justify;
+      }
+      &__description--link{
+        color: #000;
+        }
+  }
+
+  .work{
+    padding: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    max-width: 1000px;
+    grid-area: work;
+    &__title{
+        color: rgb(91, 144, 170);
+        &::before{
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: tomatO;
+            border-radius: 50%;
+            content:"";
+            margin-right: 10px;
+        }
+      }
+      &__description{
+        color: rgb(130, 138, 135);
+        max-width: 1000px;
+        text-align: justify;
+      }
+  }
+
+  .courses{
+    padding: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    max-width: 1000px;
+    grid-area: courses;
+    &__title{
+        color: rgb(91, 144, 170);
+        &::before{
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: tomatO;
+            border-radius: 50%;
+            content:"";
+            margin-right: 10px;
+        }
+      }
+      &__list{
+        color: rgb(130, 138, 135);
+        max-width: 1000px;
+        text-align: justify;
+      }
+  }
+
+  .hobby{
+    padding: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    max-width: 1000px;
+    grid-area: hobby;
+    %__title{
+        color: rgb(91, 144, 170);
+        &::before{
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: tomatO;
+            border-radius: 50%;
+            content:"";
+            margin-right: 10px;
+        }
+      }
+      &__description{
+        color: rgb(130, 138, 135);
+        max-width: 1000px;
+        text-align: justify;
+      }
+  }
+ 
+  .plans{
+    padding: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    max-width: 1000px;
+    grid-area: plans;
+    &__title{
+        color: rgb(91, 144, 170);
+        &::before{
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: tomatO;
+            border-radius: 50%;
+            content:"";
+            margin-right: 10px;
+        }
+      }
+      &__description{
+        color: rgb(130, 138, 135);
+        max-width: 1000px;
+        text-align: justify;
+      }
+      &__description--list{
+        color: rgb(130, 138, 135);
+        text-align: left;
+      }
+      &__description--link{
+        color: #000;
+      }
+  }
+
+  .js-notes{
+    padding: 16px;
+    border: 1px #ccc solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    max-width: 1000px;
+    &__title{
+        color: rgb(91, 144, 170);
+      }
+      &__description{
+        color: rgb(130, 138, 135);
+        max-width: 1000px;
+        text-align: justify;
+      }
+  }
+
+  .footer{
+  
+    &__link{
+        color: #000;
+      }
+  }
